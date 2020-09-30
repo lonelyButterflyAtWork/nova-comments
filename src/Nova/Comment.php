@@ -71,7 +71,7 @@ class Comment extends Resource
             Button::make('Powrót')
                 ->onlyOnDetail()
                 ->style('primary')
-                ->detail('App\Nova\Resources\Group', $this->commentable->id),
+                ->detail('App\Nova\Resources\Group', $this->commentable->id ?? null),
         ];
     }
 
