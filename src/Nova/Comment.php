@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\BelongsTo;
 use KirschbaumDevelopment\NovaComments\Models\Comment as CommentModel;
+use NovaButton\Button;
 
 class Comment extends Resource
 {
@@ -66,6 +67,11 @@ class Comment extends Resource
                 ->format(config('nova-comments.date-format'))
                 ->exceptOnForms()
                 ->sortable(),
+
+            Button::make('Powrót')
+                ->onlyOnDetail()
+                ->style('primary')
+                ->detail('App\Nova\Resources\Group', $this->commentable->id),
         ];
     }
 
