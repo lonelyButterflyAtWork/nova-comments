@@ -13,7 +13,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use KirschbaumDevelopment\NovaComments\Models\Comment as CommentModel;
 use NovaButton\Button;
 
-class Comment extends Resource
+class CommentLearner extends Resource
 {
     /**
      * The model the resource corresponds to.
@@ -48,6 +48,11 @@ class Comment extends Resource
     public function fields(Request $request)
     {
         return [
+            DateTime::make('Data', 'created_at')
+                ->format(config('nova-comments.date-format'))
+                ->exceptOnForms()
+                ->sortable(),
+
             Textarea::make('Treść', 'comment')
                 ->alwaysShow()
                 ->hideFromIndex(),
@@ -60,13 +65,12 @@ class Comment extends Resource
                 })
                 ->onlyOnIndex(),
 
+            Text::make('Nr grupy', function() {
+                return $this->commenter->group->id ?? null;
+            }),
+
             BelongsTo::make('Autor', 'commenter', config('nova-comments.commenter.nova-resource'))
                 ->exceptOnForms(),
-
-            DateTime::make('Data', 'created_at')
-                ->format(config('nova-comments.date-format'))
-                ->exceptOnForms()
-                ->sortable(),
 
             Button::make('Powrót')
                 ->onlyOnDetail()
