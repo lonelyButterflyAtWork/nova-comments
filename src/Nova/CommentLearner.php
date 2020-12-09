@@ -75,7 +75,7 @@ class CommentLearner extends Resource
             Button::make('Powrót')
                 ->onlyOnDetail()
                 ->style('primary')
-                ->detail('App\Nova\Resources\Group', $this->commentable->id ?? null),
+                ->detail('App\Nova\Resources\LearnerProfile', $this->commentable->id ?? null),
         ];
     }
 
