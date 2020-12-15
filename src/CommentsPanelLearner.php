@@ -28,7 +28,9 @@ class CommentsPanelLearner extends Panel
                 config('nova-comments.comments-panel.name'),
                 'comments',
                 CommentLearner::class
-            ),
+            )->canSee(function ($request) {
+                return $request->user()->can('manage-learners', \App\Models\User::class);
+            }),
         ];
     }
 }
