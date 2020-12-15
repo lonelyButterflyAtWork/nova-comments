@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use KirschbaumDevelopment\NovaComments\Nova\Comment;
 use KirschbaumDevelopment\NovaComments\Nova\CommentLearner;
 use KirschbaumDevelopment\NovaComments\Nova\CommentTeacher;
+use KirschbaumDevelopment\NovaComments\Nova\CommentCourse;
 
 class NovaCommentsServiceProvider extends ServiceProvider
 {
@@ -56,6 +57,7 @@ class NovaCommentsServiceProvider extends ServiceProvider
         Nova::resources([Comment::class]);
         Nova::resources([CommentLearner::class]);
         Nova::resources([CommentTeacher::class]);
+        Nova::resources([CommentCourse::class]);
 
         Nova::serving(
             function () {
