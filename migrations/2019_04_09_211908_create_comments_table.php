@@ -15,7 +15,7 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->morphs('commentable');
             $table->unsignedInteger('commenter_id')->nullable();
-            $table->unsignedInteger('commenter_user_type')->nullable();
+            // $table->unsignedInteger('commenter_user_type')->nullable();
             $table->text('comment');
             $table->timestamps();
         });

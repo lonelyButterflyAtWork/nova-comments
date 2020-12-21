@@ -24,7 +24,7 @@ class Comment extends Model
             function ($comment) {
                 if (auth()->check()) {
                     $comment->commenter_id = auth()->id();
-                    $comment->commenter_user_type = auth()->user()->user_type;
+                    //$comment->commenter_user_type = auth()->user()->user_type;
                 }
             }
         );
