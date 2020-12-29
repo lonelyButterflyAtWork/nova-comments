@@ -55,7 +55,8 @@ class CommentLearner extends Resource
 
             Textarea::make('Treść', 'comment')
                 ->alwaysShow()
-                ->hideFromIndex(),
+                ->hideFromIndex()
+                ->rules('required'),
 
             MorphTo::make('Commentable')->onlyOnIndex(),
 

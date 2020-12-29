@@ -50,7 +50,8 @@ class Comment extends Resource
         return [
             Textarea::make('Treść', 'comment')
                 ->alwaysShow()
-                ->hideFromIndex(),
+                ->hideFromIndex()
+                ->rules('required'),
 
             MorphTo::make('Commentable')->onlyOnIndex(),
 
