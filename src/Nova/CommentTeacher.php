@@ -23,6 +23,16 @@ class CommentTeacher extends Resource
      */
     public static $model = CommentModel::class;
 
+    public static function label()
+    {
+        return __('Comment Teacher');
+    }
+
+    public static function singularLabel()
+    {
+        return __('Teacher');
+    }
+
     /**
      * The single value that should be used to represent the resource when being displayed.
      *

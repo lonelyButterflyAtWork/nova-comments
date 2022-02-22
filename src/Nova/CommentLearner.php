@@ -29,6 +29,16 @@ class CommentLearner extends Resource
      */
     public static $title = 'id';
 
+    public static function label()
+    {
+        return __('Comment Learner');
+    }
+
+    public static function singularLabel()
+    {
+        return __('Learner');
+    }
+
     /**
      * The columns that should be searched.
      *

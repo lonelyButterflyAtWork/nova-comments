@@ -30,6 +30,17 @@ class CommentCourse extends Resource
      */
     public static $title = 'id';
 
+
+    public static function label()
+    {
+        return __('Course Learner');
+    }
+
+    public static function singularLabel()
+    {
+        return __('Course');
+    }
+
     /**
      * The columns that should be searched.
      *
