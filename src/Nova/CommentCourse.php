@@ -30,15 +30,14 @@ class CommentCourse extends Resource
      */
     public static $title = 'id';
 
+    public static function singularLabel()
+    {
+        return __('Course');
+    }
 
     public static function label()
     {
         return __('Comment Course');
-    }
-
-    public static function singularLabel()
-    {
-        return __('Course');
     }
 
     /**
