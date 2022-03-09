@@ -32,7 +32,7 @@ class CommentCourse extends Resource
 
     public static function singularLabel()
     {
-        return __('Course');
+        return __('Comment');
     }
 
     public static function label()

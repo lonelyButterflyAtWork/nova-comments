@@ -30,7 +30,7 @@ class CommentTeacher extends Resource
 
     public static function singularLabel()
     {
-        return __('Teacher');
+        return __('Comment');
     }
 
     /**

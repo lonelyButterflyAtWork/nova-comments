@@ -36,7 +36,7 @@ class CommentLearner extends Resource
 
     public static function singularLabel()
     {
-        return __('Learner');
+        return __('Comment');
     }
 
     /**
